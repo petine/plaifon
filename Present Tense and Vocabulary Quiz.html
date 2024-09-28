@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Tense and Vocabulary Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff8e1;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #2196F3; /* Blue */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #1976D2; /* Darker blue */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Present Tense and Vocabulary Quiz</h1>
+
+<div class="question">
+    <p>1. She _____ (play) soccer every Saturday.</p>
+    <input type="radio" name="q1" value="plays"> plays
+    <input type="radio" name="q1" value="is playing"> is playing
+
+    <p>2. They _____ (watch) TV right now.</p>
+    <input type="radio" name="q2" value="watch"> watch
+    <input type="radio" name="q2" value="are watching"> are watching
+
+    <p>3. I usually _____ (eat) breakfast at 7 AM.</p>
+    <input type="radio" name="q3" value="eat"> eat
+    <input type="radio" name="q3" value="am eating"> am eating
+
+    <p>4. He _____ (study) English at the moment.</p>
+    <input type="radio" name="q4" value="studies"> studies
+    <input type="radio" name="q4" value="is studying"> is studying
+
+    <p>5. We often _____ (go) to the park.</p>
+    <input type="radio" name="q5" value="go"> go
+    <input type="radio" name="q5" value="are going"> are going
+
+    <p>6. The dog is _____ (bark) loudly.</p>
+    <input type="radio" name="q6" value="barking"> barking
+    <input type="radio" name="q6" value="barks"> barks
+
+    <p>7. My mom _____ (cook) dinner now.</p>
+    <input type="radio" name="q7" value="cooks"> cooks
+    <input type="radio" name="q7" value="is cooking"> is cooking
+
+    <p>8. I _____ (like) chocolate.</p>
+    <input type="radio" name="q8" value="like"> like
+    <input type="radio" name="q8" value="am liking"> am liking
+
+    <p>9. They _____ (play) games every weekend.</p>
+    <input type="radio" name="q9" value="play"> play
+    <input type="radio" name="q9" value="are playing"> are playing
+
+    <p>10. She _____ (read) a book now.</p>
+    <input type="radio" name="q10" value="reads"> reads
+    <input type="radio" name="q10" value="is reading"> is reading
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'plays',
+            q2: 'are watching',
+            q3: 'eat',
+            q4: 'is studying',
+            q5: 'go',
+            q6: 'barking',
+            q7: 'is cooking',
+            q8: 'like',
+            q9: 'play',
+            q10: 'is reading'
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepositions of Place Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e3f2fd;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3f51b5; /* Indigo */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #303f9f; /* Darker indigo */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Prepositions of Place Quiz</h1>
+
+<div class="question">
+    <p>1. The cat is _____ the table.</p>
+    <input type="radio" name="q1" value="in"> in
+    <input type="radio" name="q1" value="on"> on
+    <input type="radio" name="q1" value="under"> under
+
+    <p>2. The books are _____ the shelf.</p>
+    <input type="radio" name="q2" value="at"> at
+    <input type="radio" name="q2" value="on"> on
+    <input type="radio" name="q2" value="beside"> beside
+
+    <p>3. The dog is sleeping _____ the bed.</p>
+    <input type="radio" name="q3" value="in"> in
+    <input type="radio" name="q3" value="under"> under
+    <input type="radio" name="q3" value="beside"> beside
+
+    <p>4. The pen is _____ the book.</p>
+    <input type="radio" name="q4" value="at"> at
+    <input type="radio" name="q4" value="on"> on
+    <input type="radio" name="q4" value="under"> under
+
+    <p>5. The ball is _____ the box.</p>
+    <input type="radio" name="q5" value="beside"> beside
+    <input type="radio" name="q5" value="in"> in
+    <input type="radio" name="q5" value="on"> on
+
+    <p>6. The picture is _____ the wall.</p>
+    <input type="radio" name="q6" value="on"> on
+    <input type="radio" name="q6" value="under"> under
+    <input type="radio" name="q6" value="at"> at
+
+    <p>7. The shoes are _____ the closet.</p>
+    <input type="radio" name="q7" value="in"> in
+    <input type="radio" name="q7" value="beside"> beside
+    <input type="radio" name="q7" value="on"> on
+
+    <p>8. The cat is _____ the chair.</p>
+    <input type="radio" name="q8" value="at"> at
+    <input type="radio" name="q8" value="under"> under
+    <input type="radio" name="q8" value="in"> in
+
+    <p>9. The flowers are _____ the table.</p>
+    <input type="radio" name="q9" value="beside"> beside
+    <input type="radio" name="q9" value="on"> on
+    <input type="radio" name="q9" value="under"> under
+
+    <p>10. The dog is _____ the park.</p>
+    <input type="radio" name="q10" value="in"> in
+    <input type="radio" name="q10" value="at"> at
+    <input type="radio" name="q10" value="beside"> beside
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'under',
+            q2: 'on',
+            q3: 'under',
+            q4: 'on',
+            q5: 'in',
+            q6: 'on',
+            q7: 'in',
+            q8: 'under',
+            q9: 'on',
+            q10: 'at'
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

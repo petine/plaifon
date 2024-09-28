@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjective Quiz for Grade 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .story {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin: 15px 0;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Adjective Quiz for Grade 2</h1>
+
+<div class="story">
+    <h2>Story 1: The Big Dog</h2>
+    <p>
+        There is a big dog named "Ball". Ball has brown fur and long hair. It loves to run in the garden every day. One day, it met a small dog named "Mimi". Mimi has white fur and short hair. The two dogs played together happily.
+    </p>
+    <div class="question">
+        1. What is Ball like?
+        <br>
+        <input type="radio" name="q1" value="small"> small
+        <input type="radio" name="q1" value="big"> big
+        <input type="radio" name="q1" value="thin"> thin
+    </div>
+    <div class="question">
+        2. What color is Ball's fur?
+        <br>
+        <input type="radio" name="q2" value="white"> white
+        <input type="radio" name="q2" value="brown"> brown
+        <input type="radio" name="q2" value="black"> black
+    </div>
+    <div class="question">
+        3. What is the small dog's name?
+        <br>
+        <input type="radio" name="q3" value="Ball"> Ball
+        <input type="radio" name="q3" value="Mimi"> Mimi
+        <input type="radio" name="q3" value="Fufu"> Fufu
+    </div>
+    <div class="question">
+        4. What is Mimi's fur like?
+        <br>
+        <input type="radio" name="q4" value="long"> long
+        <input type="radio" name="q4" value="short"> short
+        <input type="radio" name="q4" value="curly"> curly
+    </div>
+    <div class="question">
+        5. Where do the dogs play together?
+        <br>
+        <input type="radio" name="q5" value="in the house"> in the house
+        <input type="radio" name="q5" value="in the garden"> in the garden
+        <input type="radio" name="q5" value="at school"> at school
+    </div>
+</div>
+
+<div class="story">
+    <h2>Story 2: The Cat and the Fish</h2>
+    <p>
+        There is a cat named "Maw". Maw has black fur and yellow eyes. It loves to sit near the fish tank. The fish tank has big and small fish. The big fish is orange, and the small fish is blue. Maw always watches the fish.
+    </p>
+    <div class="question">
+        6. What is Maw like?
+        <br>
+        <input type="radio" name="q6" value="white"> white
+        <input type="radio" name="q6" value="black"> black
+        <input type="radio" name="q6" value="brown"> brown
+    </div>
+    <div class="question">
+        7. What color are Maw's eyes?
+        <br>
+        <input type="radio" name="q7" value="blue"> blue
+        <input type="radio" name="q7" value="yellow"> yellow
+        <input type="radio" name="q7" value="green"> green
+    </div>
+    <div class="question">
+        8. What color is the big fish?
+        <br>
+        <input type="radio" name="q8" value="blue"> blue
+        <input type="radio" name="q8" value="orange"> orange
+        <input type="radio" name="q8" value="green"> green
+    </div>
+    <div class="question">
+        9. What size is the small fish?
+        <br>
+        <input type="radio" name="q9" value="big"> big
+        <input type="radio" name="q9" value="small"> small
+        <input type="radio" name="q9" value="thin"> thin
+    </div>
+    <div class="question">
+        10. What does Maw do near the fish tank?
+        <br>
+        <input type="radio" name="q10" value="play"> play
+        <input type="radio" name="q10" value="watch"> watch
+        <input type="radio" name="q10" value="eat"> eat
+    </div>
+</div>
+
+<div class="story">
+    <h2>Story 3: The Happy Elephant</h2>
+    <p>
+        There is a happy elephant named "Ellie". Ellie is big and gray. It loves to splash water in the pond. One day, Ellie saw a thin rabbit. The rabbit was hopping beside the pond. Ellie invited the rabbit to play in the water.
+    </p>
+    <div class="question">
+        11. What is Ellie like?
+        <br>
+        <input type="radio" name="q11" value="thin"> thin
+        <input type="radio" name="q11" value="happy"> happy
+        <input type="radio" name="q11" value="small"> small
+    </div>
+    <div class="question">
+        12. What color is Ellie?
+        <br>
+        <input type="radio" name="q12" value="gray"> gray
+        <input type="radio" name="q12" value="brown"> brown
+        <input type="radio" name="q12" value="white"> white
+    </div>
+    <div class="question">
+        13. What does Ellie love to do?
+        <br>
+        <input type="radio" name="q13" value="jump"> jump
+        <input type="radio" name="q13" value="splash water"> splash water
+        <input type="radio" name="q13" value="run"> run
+    </div>
+    <div class="question">
+        14. What is the rabbit like?
+        <br>
+        <input type="radio" name="q14" value="big"> big
+        <input type="radio" name="q14" value="thin"> thin
+        <input type="radio" name="q14" value="fat"> fat
+    </div>
+    <div class="question">
+        15. Where did Ellie invite the rabbit?
+        <br>
+        <input type="radio" name="q15" value="to the house"> to the house
+        <input type="radio" name="q15" value="to the water"> to the water
+        <input type="radio" name="q15" value="to the forest"> to the forest
+    </div>
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'big',
+            q2: 'brown',
+            q3: 'Mimi',
+            q4: 'short',
+            q5: 'in the garden',
+            q6: 'black',
+            q7: 'yellow',
+            q8: 'orange',
+            q9: 'small',
+            q10: 'watch',
+            q11: 'happy',
+            q12: 'gray',
+            q13: 'splash water',
+            q14: 'thin',
+            q15: 'to the water'
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

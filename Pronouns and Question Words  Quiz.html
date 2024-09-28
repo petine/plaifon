@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronouns and Question Words Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e6f7ff;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pronouns and Question Words Quiz</h1>
+
+<div class="question">
+    <p>1. _____ is my best friend.</p>
+    <input type="radio" name="q1" value="He"> He
+    <input type="radio" name="q1" value="She"> She
+    <input type="radio" name="q1" value="It"> It
+
+    <p>2. _____ is a cat.</p>
+    <input type="radio" name="q2" value="He"> He
+    <input type="radio" name="q2" value="It"> It
+    <input type="radio" name="q2" value="They"> They
+
+    <p>3. _____ are my friends.</p>
+    <input type="radio" name="q3" value="They"> They
+    <input type="radio" name="q3" value="I"> I
+    <input type="radio" name="q3" value="You"> You
+
+    <p>4. _____ is going to school.</p>
+    <input type="radio" name="q4" value="She"> She
+    <input type="radio" name="q4" value="He"> He
+    <input type="radio" name="q4" value="It"> It
+
+    <p>5. _____ am happy.</p>
+    <input type="radio" name="q5" value="You"> You
+    <input type="radio" name="q5" value="I"> I
+    <input type="radio" name="q5" value="They"> They
+
+    <p>6. Where is _____?</p>
+    <input type="radio" name="q6" value="he"> he
+    <input type="radio" name="q6" value="she"> she
+    <input type="radio" name="q6" value="it"> it
+
+    <p>7. _____ like to play.</p>
+    <input type="radio" name="q7" value="You"> You
+    <input type="radio" name="q7" value="Him"> Him
+    <input type="radio" name="q7" value="Them"> Them
+</div>
+
+<div class="question">
+    <p>8. Can you give _____ the book?</p>
+    <input type="radio" name="q8" value="me"> me
+    <input type="radio" name="q8" value="you"> you
+    <input type="radio" name="q8" value="him"> him
+
+    <p>9. I saw _____ at the park.</p>
+    <input type="radio" name="q9" value="her"> her
+    <input type="radio" name="q9" value="it"> it
+    <input type="radio" name="q9" value="us"> us
+
+    <p>10. I want to play with _____.</p>
+    <input type="radio" name="q10" value="them"> them
+    <input type="radio" name="q10" value="you"> you
+    <input type="radio" name="q10" value="her"> her
+
+    <p>11. Can you help _____ with my homework?</p>
+    <input type="radio" name="q11" value="us"> us
+    <input type="radio" name="q11" value="me"> me
+    <input type="radio" name="q11" value="him"> him
+
+    <p>12. I saw _____ at the store.</p>
+    <input type="radio" name="q12" value="him"> him
+    <input type="radio" name="q12" value="her"> her
+    <input type="radio" name="q12" value="you"> you
+
+    <p>13. _____ is your favorite color?</p>
+    <input type="radio" name="q13" value="What"> What
+    <input type="radio" name="q13" value="Where"> Where
+    <input type="radio" name="q13" value="How"> How
+
+    <p>14. _____ do you go to school?</p>
+    <input type="radio" name="q14" value="When"> When
+    <input type="radio" name="q14" value="Who"> Who
+    <input type="radio" name="q14" value="Why"> Why
+
+    <p>15. _____ is your name?</p>
+    <input type="radio" name="q15" value="How"> How
+    <input type="radio" name="q15" value="Where"> Where
+    <input type="radio" name="q15" value="What"> What
+
+    <p>16. _____ is your favorite animal?</p>
+    <input type="radio" name="q16" value="Why"> Why
+    <input type="radio" name="q16" value="What"> What
+    <input type="radio" name="q16" value="Who"> Who
+
+    <p>17. _____ do you live?</p>
+    <input type="radio" name="q17" value="Where"> Where
+    <input type="radio" name="q17" value="When"> When
+    <input type="radio" name="q17" value="How"> How
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'He',
+            q2: 'It',
+            q3: 'They',
+            q4: 'She',
+            q5: 'I',
+            q6: 'he',
+            q7: 'You',
+            q8: 'me',
+            q9: 'her',
+            q10: 'them',
+            q11: 'me',
+            q12: 'him',
+            q13: 'What',
+            q14: 'When',
+            q15: 'What',
+            q16: 'What',
+            q17: 'Where'
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

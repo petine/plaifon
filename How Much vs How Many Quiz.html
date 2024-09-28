@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much vs How Many Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>How Much vs How Many Quiz</h1>
+
+<div class="question">
+    <p>1. How many apples are in the basket?</p>
+    <input type="radio" name="q1" value="Yes"> Yes
+    <input type="radio" name="q1" value="No"> No
+
+    <p>2. How much sugar do you want?</p>
+    <input type="radio" name="q2" value="Yes"> Yes
+    <input type="radio" name="q2" value="No"> No
+
+    <p>3. How many books do you have?</p>
+    <input type="radio" name="q3" value="Yes"> Yes
+    <input type="radio" name="q3" value="No"> No
+
+    <p>4. How much money is in your pocket?</p>
+    <input type="radio" name="q4" value="Yes"> Yes
+    <input type="radio" name="q4" value="No"> No
+
+    <p>5. How many friends do you have?</p>
+    <input type="radio" name="q5" value="Yes"> Yes
+    <input type="radio" name="q5" value="No"> No
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'Yes',  // Correct answer for How many
+            q2: 'Yes',  // Correct answer for How much
+            q3: 'Yes',  // Correct answer for How many
+            q4: 'Yes',  // Correct answer for How much
+            q5: 'Yes'   // Correct answer for How many
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e8f5e9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .question {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4caf50; /* Green */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #388e3c; /* Darker green */
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Verb Quiz</h1>
+
+<div class="question">
+    <p>1. I _____ (be) happy today.</p>
+    <input type="radio" name="q1" value="am"> am
+    <input type="radio" name="q1" value="is"> is
+    <input type="radio" name="q1" value="are"> are
+
+    <p>2. She _____ (have) a cat.</p>
+    <input type="radio" name="q2" value="has"> has
+    <input type="radio" name="q2" value="have"> have
+
+    <p>3. They _____ (be) friends.</p>
+    <input type="radio" name="q3" value="is"> is
+    <input type="radio" name="q3" value="are"> are
+    <input type="radio" name="q3" value="am"> am
+
+    <p>4. He _____ (do) his homework now.</p>
+    <input type="radio" name="q4" value="do"> do
+    <input type="radio" name="q4" value="does"> does
+
+    <p>5. We _____ (be) in class together.</p>
+    <input type="radio" name="q5" value="is"> is
+    <input type="radio" name="q5" value="are"> are
+    <input type="radio" name="q5" value="am"> am
+
+    <p>6. You _____ (have) a nice bike.</p>
+    <input type="radio" name="q6" value="has"> has
+    <input type="radio" name="q6" value="have"> have
+
+    <p>7. I _____ (can) swim.</p>
+    <input type="radio" name="q7" value="can"> can
+    <input type="radio" name="q7" value="may"> may
+
+    <p>8. He _____ (may) go to the party.</p>
+    <input type="radio" name="q8" value="can"> can
+    <input type="radio" name="q8" value="may"> may
+
+    <p>9. Do you _____ (like) ice cream?</p>
+    <input type="radio" name="q9" value="do"> do
+    <input type="radio" name="q9" value="does"> does
+
+    <p>10. She _____ (have) a big smile.</p>
+    <input type="radio" name="q10" value="has"> has
+    <input type="radio" name="q10" value="have"> have
+
+    <p>11. They _____ (can) play soccer.</p>
+    <input type="radio" name="q11" value="can"> can
+    <input type="radio" name="q11" value="may"> may
+
+    <p>12. I _____ (do) my chores every day.</p>
+    <input type="radio" name="q12" value="do"> do
+    <input type="radio" name="q12" value="does"> does
+
+    <p>13. The cat _____ (be) on the sofa.</p>
+    <input type="radio" name="q13" value="is"> is
+    <input type="radio" name="q13" value="am"> am
+    <input type="radio" name="q13" value="are"> are
+
+    <p>14. He _____ (have) two dogs.</p>
+    <input type="radio" name="q14" value="has"> has
+    <input type="radio" name="q14" value="have"> have
+
+    <p>15. She _____ (can) speak English.</p>
+    <input type="radio" name="q15" value="can"> can
+    <input type="radio" name="q15" value="may"> may
+
+    <p>16. We _____ (do) a project together.</p>
+    <input type="radio" name="q16" value="do"> do
+    <input type="radio" name="q16" value="does"> does
+
+    <p>17. Are you _____ (be) ready?</p>
+    <input type="radio" name="q17" value="am"> am
+    <input type="radio" name="q17" value="is"> is
+    <input type="radio" name="q17" value="are"> are
+
+    <p>18. They _____ (have) a lot of fun.</p>
+    <input type="radio" name="q18" value="has"> has
+    <input type="radio" name="q18" value="have"> have
+
+    <p>19. I _____ (may) go to the store.</p>
+    <input type="radio" name="q19" value="can"> can
+    <input type="radio" name="q19" value="may"> may
+
+    <p>20. Does she _____ (like) to dance?</p>
+    <input type="radio" name="q20" value="do"> do
+    <input type="radio" name="q20" value="does"> does
+</div>
+
+<button type="button" onclick="checkAnswers()">Check Answers</button>
+
+<div class="result" id="result">
+    <h2>Your Answers:</h2>
+    <ul id="answerList"></ul>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'am',
+            q2: 'has',
+            q3: 'are',
+            q4: 'does',
+            q5: 'are',
+            q6: 'have',
+            q7: 'can',
+            q8: 'may',
+            q9: 'do',
+            q10: 'has',
+            q11: 'can',
+            q12: 'do',
+            q13: 'is',
+            q14: 'has',
+            q15: 'can',
+            q16: 'do',
+            q17: 'are',
+            q18: 'have',
+            q19: 'may',
+            q20: 'does'
+        };
+
+        const answerList = document.getElementById('answerList');
+        answerList.innerHTML = '';
+
+        for (let question in answers) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            const answerText = userAnswer ? userAnswer.value : 'not answered';
+            const correctAnswer = answers[question];
+            const resultText = answerText === correctAnswer ? 'Correct!' : `Wrong! Correct answer is: ${correctAnswer}`;
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${question}, Your answer: ${answerText}, ${resultText}`;
+            answerList.appendChild(listItem);
+        }
+
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
